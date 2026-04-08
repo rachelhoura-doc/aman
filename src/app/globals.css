@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f8f8;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #0f766e;
+  --primary-foreground: #f0fdfa;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #1e293b;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #ccfbf1;
+  --accent-foreground: #134e4a;
+  --destructive: #dc2626;
+  --destructive-foreground: #fef2f2;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #0d9488;
+  --radius: 0.75rem;
+}
+
+[data-time-theme="night"] {
+  --background: #1b1a1e;
+  --foreground: #f3ece6;
+  --card: #26232a;
+  --card-foreground: #f3ece6;
+  --popover: #2b272f;
+  --popover-foreground: #f3ece6;
+  --primary: #d3894b;
+  --primary-foreground: #2b1f12;
+  --secondary: #3a343d;
+  --secondary-foreground: #f3ece6;
+  --muted: #312d35;
+  --muted-foreground: #d4c8bc;
+  --accent: #4a3524;
+  --accent-foreground: #f8eadf;
+  --destructive: #f06a6a;
+  --destructive-foreground: #220e0e;
+  --border: #443d46;
+  --input: #4d4550;
+  --ring: #e89a5a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --font-sans: var(--font-family-sans), var(--font-family-arabic), ui-sans-serif,
+    system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+@keyframes aman-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aman-pop {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  35% {
+    transform: scale(0.88) rotate(-5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.aman-fade-up {
+  animation: aman-fade-up 220ms ease-out both;
+}
+
+.aman-pop {
+  animation: aman-pop 360ms ease-out both;
+}
+
+@keyframes aman-zone-pulse {
+  0% {
+    opacity: 0.38;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0.38;
+  }
+}
+
+.aman-zone-pulse {
+  animation: aman-zone-pulse 1.5s ease-in-out infinite;
+}
+
+.aman-thermometer-slider {
+  writing-mode: bt-lr;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+.aman-thermometer-slider::-webkit-slider-runnable-track {
+  width: 4px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.aman-thermometer-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 2px solid var(--color-primary);
+  background: var(--color-card);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+  cursor: ns-resize;
+}
+
+.aman-thermometer-slider::-moz-range-track {
+  width: 4px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.aman-thermometer-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 2px solid var(--color-primary);
+  background: var(--color-card);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+  cursor: ns-resize;
+}
